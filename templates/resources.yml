@@ -2,7 +2,10 @@ AWSTemplateFormatVersion: '2010-09-09'
 
 Description: 'AWS CloudFormation Template For BankManagement Java App Resources'
 
-
+Parameters:
+  Principal:
+    Type: String
+    Default: arn:aws:iam::266735814394:role/silas-github-role
 Resources:
   BankManagementECRRepository:
     Type: AWS::ECR::Repository
@@ -18,7 +21,7 @@ Resources:
           - Sid: GitHubOIDCPushAccess
             Effect: Allow
             Principal:
-              AWS: arn:aws:iam::266735814394:role/silas-github-role
+              AWS: !Ref Principal
             Action:
               - ecr:BatchCheckLayerAvailability
               - ecr:InitiateLayerUpload
