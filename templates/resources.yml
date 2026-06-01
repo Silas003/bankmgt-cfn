@@ -13,7 +13,7 @@ Resources:
       RepositoryName: bank-management
       ImageScanningConfiguration:
         scanOnPush: true
-      ImageTagMutability: IMMUTABLE
+      ImageTagMutability: MUTABLE
 
       RepositoryPolicyText:
         Version: '2012-10-17'
